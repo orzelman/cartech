@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f226dbcd12.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<!-- https://www.vag-performance.co.uk/ -->
+
+<body>
+    <popup id="popup-email" class="popup hidden">
+        <i id="xmark" class="fa-sharp fa-solid fa-circle-xmark"></i>
+        <h3>Wiadomość</h3>
+        <hr class="messageLine">
+        <form action="mailto:orzelman@gmail.com" method="post">
+            <label for="userName"></label>
+            <input id="userName" name="userName" placeholder="Imię, Nazwisko">
+            <label for="userEmail"></label>
+            <input id="userEmail" name="userEmail" placeholder="e-mail, lub telefon">
+            <label for="userMessage"></label>
+            <textarea id="userMessage" name="userMessage" placeholder="Treść wiadomości"></textarea></br>
+            <input type="submit" value="Wyślij"></submit>
+        </form>
+    </popup>
+    <header>
+        <div class="header-left">
+            <img src="./img/logo_oryginal.png">
+            <div class="navbar-container">
+                <div class="navbar-menu">
+                    <div class="navbar-toggle">
+                        <span class="navbar-toggle-icon"></span>
+                        <span class="navbar-toggle-icon"></span>
+                        <span class="navbar-toggle-icon"></span>
+                        <span class="navbar-toggle-icon"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-center">
+            <img src="./img/logo_oryginal.png">
+            <div class="header-center-top">
+                <ul>
+                    <li><a href="#">O NAS</a></li>
+                    <li><a href="#offer">OFERTA</a></li>
+                    <li><a href="#map">MAPA DOJAZDU</a></li>
+                    <li><a href="#contact">KONTAKT</a></li>
+                </ul>
+                <div class="header-center-social">
+                    <i class="fa-regular fa-envelope envelope"></i>
+                    <a href="https://www.facebook.com/cartechdebica" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-right">
+            <i class="fa-regular fa-envelope envelope"></i>
+            <a href="https://www.facebook.com/cartechdebica" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <p><a href="#">CARTECH</a></p>
+        <p><a href="#aboutsus">O NAS</a></p>
+        <p><a href="#offer">OFERTA</a></p>
+        <p><a href="#map">MAPA DOJAZDU</a></p>
+        <p><a href="#contact">KONTAKT </a></p>
+    </nav>
+
+    <section id="aboutus">
+        <p class="aboutus-info">Zgrana załoga, potrafiąca rozwiązać każdy problem,
+            podejmująca każde wyzwanie, czeka na Wasze samochody. Zapraszamy
+        </p>
+    </section>
+
+    <section id="offer">
+        <h2>Nasze usługi:</h2>
+        <div class="offer-tile">
+            <div class="offer-cover"></div>
+            <img src="./img/parts/klocki_TRW.jpg">
+            <div class="red-hero"></div>
+            <div class="offer-tile-inside">
+                <h3>HAMULCE</h3>
+                <p class="offer-info hidden">Zadbaj o bezpieczeństwo swoje i swoich pasażerów podczas jazdy!
+                    Nasi wykwalifikowani mechanicy posiadają nie tylko niezbędne umiejętności, ale również dostęp do
+                    najnowocześniejszego sprzętu, co pozwala im na dokładne i skuteczne sprawdzenie oraz naprawę układu
+                    hamulcowego Twojego pojazdu. Nie ryzykuj, zaufaj profesjonalistom i skorzystaj z naszej usługi już
+                    dziś! </br>Zapraszamy
+                </p>
+            </div>
+        </div>
+        <div class="offer-tile">
+            <div class="offer-cover"></div>
+            <img src="./img/parts/olej1-1024x576.jpg">
+            <div class="red-hero"></div>
+            <div class="offer-tile-inside">
+                <h3>FILTRY</br>OLEJE</h3>
+                <p class="offer-info hidden">Zapraszamy do naszego warsztatu samochodowego, gdzie nasi specjaliści
+                    chętnie
+                    przeprowadzą
+                    kompleksową wymianę filtrów, płynów oraz olejów w Twoim samochodzie. Dzięki nam Twój pojazd będzie
+                    działał jak nowy i zapewni Ci bezpieczeństwo na drodze!
+                </p>
+            </div>
+        </div>
+        <div class="offer-tile">
+            <div class="offer-cover"></div>
+            <img src="./img/parts/AC.jpg">
+            <div class="red-hero"></div>
+            <div class="offer-tile-inside">
+                <h3>KLIMATYZACJA</h3>
+                <p class="offer-info hidden">W ramach naszej usługi oferujemy kompleksowy przegląd klimatyzacji, w tym
+                    wyczyszczenie układu, uzupełnienie płynów i wymianę filtrów powietrza. Korzystamy tylko z najwyższej
+                    jakości części i narzędzi, aby zapewnić trwałe i skuteczne naprawy.</p>
+            </div>
+        </div>
+        <div class="offer-tile">
+            <div class="offer-cover"></div>
+            <img src="./img/parts/silnik.jpg">
+            <div class="red-hero"></div>
+            <div class="offer-tile-inside">
+                <h3>SILNIK</h3>
+                <p class="offer-info hidden">Oferujemy kompleksowe naprawy silników, skrzyń biegów, układów zawieszenia,
+                    hamulców i innych podzespołach w samochodach różnych marek i modeli. Działamy szybko i
+                    sprawnie, aby zapewnić naszym klientom jak najkrótszy czas przestoju w użytkowaniu ich samochodu.
+                </p>
+            </div>
+        </div>
+        <p class="ad">Jesteśmy przekonani, że nasze usługi spełnią oczekiwania nawet najbardziej wymagających klientów.
+            Dlatego też zapraszamy do kontaktu. </p>
+    </section>
+
+    <section id="top">
+        <div class="top-board">
+            <h2>SERWISUJEMY:</h2>
+            <div class="brands">
+                <div class="brand-window">
+                    <img src="./img/black_white/1.jpg" class="img-brand">
+                    <div class="dark-hero">
+                        <p class="brand-title">AUDI</p>
+                    </div>
+                </div>
+                <div class="brand-window">
+                    <img src="./img/black_white/2.jpg" class="img-brand">
+                    <div class="dark-hero">
+                        <p class="brand-title">FORD</p>
+                    </div>
+
+                </div>
+                <div class="brand-window">
+                    <img src="./img/black_white/3.jpg" class="img-brand">
+                    <div class="dark-hero">
+                        <p class="brand-title">OPEL</p>
+                    </div>
+
+                </div>
+                <div class="brand-window">
+                    <img src="./img/black_white/4.jpg" class="img-brand">
+                    <div class="dark-hero">
+                        <p class="brand-title">MERCEDES</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-hero"></div>
+    </section>
+
+    <section id="map" class="map">
+        <h3>Mapa dojazdu:</h3>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.5743682798047!2d21.39332775791185!3d50.05157626999715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473d0b97c944093b%3A0x8dd738eba8aa3f30!2sCARTECH%20Kompleksowy%20Serwis%20Samochodowy!5e0!3m2!1spl!2spl!4v1677889467926!5m2!1spl!2spl"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Kontakt:</h2>
+        <p>ul. Fabryczna 18</p>
+        <p>39-200 Dębica</p>
+        <p><i class="fa-sharp fa-solid fa-phone"></i> 603 994 507</p>
+
+    </section>
+
+    <footer>
+        <p class="footer">
+            <i class="fa-solid fa-car"></i>
+            <span>copyright&copy; 2023 CARTECH, created by <a href="mailto:0x6d.orzel@gmail.com">m.orzel</a></span>
+            <i class="fa-solid fa-car"></i>
+        </p>
+    </footer>
+
+
+    <script src="./script,js"></script>
+</body>
+
+</html>

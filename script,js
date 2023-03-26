@@ -1,0 +1,133 @@
+const navbarToggle = document.querySelector(".navbar-toggle");
+const dash = document.querySelectorAll(".navbar-toggle-icon");
+const nav = document.querySelector("nav");
+const popup = document.querySelector(".popup");
+const xmark = document.getElementById("xmark");
+const envelope = document.querySelectorAll("i.fa-envelope");
+const brands = document.querySelector(".brands");
+const brandWindow = document.querySelectorAll(".brand-window");
+const imgBrand = document.querySelectorAll(".img-brand");
+const brandTitle = document.querySelectorAll(".brand-title");
+const brandWindowNames = document.querySelectorAll(".brand-window div p");
+const listOfBrands = ['TOYOTA', 'AUDI', 'FORD', 'OPEL', 'MERCEDES', 'VOLKSWAGEN', 'SEAT', 'SKODA', 'MAZDA', 'RENAULT'];
+
+let currentWindow = 0;
+let currentFile = 0;
+
+function toggleX() {
+    if (nav.classList.contains('showNav')) {
+        dash[0].classList.add("hide");
+        dash[1].classList.add("hide");
+        dash[2].classList.add("x1");
+        dash[3].classList.add("x2");
+    }
+    else {
+        dash[0].classList.remove("hide");
+        dash[1].classList.remove("hide");
+        dash[2].classList.remove("x1");
+        dash[3].classList.remove("x2");
+    }
+
+}
+document.addEventListener("click", (event) => {
+    if (nav.classList.contains("showNav")) {
+        nav.classList.remove('showNav');
+    }
+    toggleX();
+});
+navbarToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    console.log('pokazuje menu');
+    nav.classList.toggle("showNav");
+    toggleX();
+});
+envelope.forEach((item) => item.addEventListener("click", () => {
+    popup.classList.remove("hidden");
+}));
+xmark.addEventListener("click", () => {
+    popup.classList.add("hidden");
+})
+
+
+
+
+// Nakładanie czerwonego tła i przybliżenie
+// Po najechaniu na zdjęcie auta albo nazwę dodaj klasę red-hero oraz klasę zoom10 (o ile jej nie ma)
+
+function addRedHero(event) {
+    if (!event.target.classList.contains("red-hero")) {
+        event.target.classList.add("red-hero");
+        event.target.parentElement.querySelector("img").classList.add("zoom10");
+    }
+}
+function removeRedHero(event) {
+    event.target.classList.remove("red-hero");
+    event.target.parentElement.querySelector("img").classList.remove("zoom10");
+}
+// brandWindow.forEach(el => {
+//     el.addEventListener("mouseover", addRedHero);
+//     el.addEventListener("mouseout", removeRedHero);
+// })
+
+//użyto funkcji stopPropagation() - w celu zatrzymania propagacji zdarzenia
+// brandTitle.forEach(el => {
+//     el.addEventListener("mouseover", (e) => {
+//         e.stopPropagation();
+//         e.target.parentElement.classList.add("red-hero");
+//         e.target.parentElement.parentElement.querySelector("img").classList.add("zoom10");
+//     });
+//     el.addEventListener("mouseout", (e) => {
+//         e.stopPropagation();
+//     })
+// })
+
+
+const offerTile = document.querySelectorAll('.offer-tile');
+const hideRestInfo = (item) => {
+    offerTile.forEach(item => {
+        let element = item.querySelector('.offer-info');
+        element.classList.add('hidden');
+    })
+    item.querySelector('.offer-info').classList.remove('hidden');
+}
+const showSelectedElement = (item) => {
+    let element = item.querySelector('.offer-info');
+    if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+    }
+    else {
+        element.classList.add('hidden');
+    }
+}
+
+// show/hide   offer list
+offerTile.forEach(item => {
+    item.addEventListener("click", (event) => {
+        if (item.querySelector('.offer-info').classList.contains('hidden')) {
+            // window.scrollBy(0, (event.clientY - event.offsetY) - 10);
+            showSelectedElement(item);
+            hideRestInfo(item);
+        }
+        else {
+            item.querySelector('.offer-info').classList.add('hidden');
+        }
+    })
+});
+
+function changeBrand() {
+    const imgList = document.querySelectorAll(".brand-window img");
+    imgList[currentWindow].setAttribute("src", `./img/black_white/${currentFile}.jpg`);
+    brandWindowNames[(currentWindow + 3) % 4].classList.remove('zoom50');
+    brandWindowNames[currentWindow].textContent = listOfBrands[currentFile];
+    brandWindowNames[currentWindow].classList.add('zoom50');
+    currentWindow++;
+    currentFile++;
+    currentWindow %= 4;
+    currentFile %= 10;
+};
+
+const startPresentation = () => {
+    setInterval(changeBrand, 2000);
+}
+
+document.addEventListener("DOMContentLoaded", startPresentation);
